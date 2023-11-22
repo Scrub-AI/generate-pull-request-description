@@ -246,6 +246,8 @@ class PullRequestDescriptionGenerator:
         unparsed_commits = []
 
         for commit in self.current_pull_request["commits"]:
+            # https://github.com/octue/generate-pull-request-description/issues/9
+            print(commit)
             header, *body = commit["commit"]["message"].split("\n")
             body = "\n".join(body)
 
